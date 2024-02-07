@@ -957,6 +957,7 @@ RCTAutoInsetsProtocol>
   _scrollEnabled = scrollEnabled;
 #if !TARGET_OS_OSX
   _webView.scrollView.scrollEnabled = scrollEnabled;
+  _webView.scrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 #endif // !TARGET_OS_OSX
 }
 
