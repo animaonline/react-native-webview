@@ -478,6 +478,7 @@ RCTAutoInsetsProtocol>
   if (self.window != nil && _webView == nil) {
     WKWebViewConfiguration *wkWebViewConfig = [self setUpWkWebViewConfig];
     _webView = [[RNCWKWebView alloc] initWithFrame:self.bounds configuration: wkWebViewConfig];
+    _webView.scrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     [self setBackgroundColor: _savedBackgroundColor];
 #if !TARGET_OS_OSX
     _webView.menuItems = _menuItems;
@@ -957,7 +958,6 @@ RCTAutoInsetsProtocol>
   _scrollEnabled = scrollEnabled;
 #if !TARGET_OS_OSX
   _webView.scrollView.scrollEnabled = scrollEnabled;
-  _webView.scrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 #endif // !TARGET_OS_OSX
 }
 
